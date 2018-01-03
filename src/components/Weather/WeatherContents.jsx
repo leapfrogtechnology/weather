@@ -1,6 +1,8 @@
 import React from 'react';
 
-const WeatherContents = (props) => (
+import * as weatherService from '../../services/weather';
+
+const WeatherContents = ({ weather, wind, clouds, main, sys, datetime }) => (
   <div className="main-wrapper" data-ng-controller='WeatherController'>
     <div className="weather-forecast" data-ng-init='displayCurrentLocationData()'>
       <div className="container">
@@ -8,13 +10,13 @@ const WeatherContents = (props) => (
           <div className="row">
             <div className="col-md-12 col-sm-12 col-xs-12">
               <div className="update">
-                <span>Today's <strong className="warmer">Weather</strong> Forcast of Kathmandu N.P.</span>
+                <span>Today's <strong className="warmer">Weather</strong> Forcast of Kathmandu</span>
                 <ul>
-                  <li>High <strong>51.58&deg; C</strong>
+                  {/* <li>High <strong>51.58&deg; C</strong>
                   </li>
                   <li>Low <strong>0.46&deg; C</strong>
-                  </li>
-                  <li>Updated 23min ago</li>
+                  </li> */}
+                  <li>Updated {weatherService.getUpdatedTime(datetime)} ago</li>
                 </ul>
               </div>
             </div>
@@ -23,14 +25,14 @@ const WeatherContents = (props) => (
                 <ul>
                   <li>
                     <i>
-                      <img className="icon-image" data-ng-if="weatherIcon" alt="ico" src="http://openweathermap.org/img/w/02n.png" />
-                    </i> Few Clouds
-                      </li>
+                      <img className="icon-image" alt="ico" src={`http://openweathermap.org/img/w/${weather.icon}.png`} />
+                    </i> {weather.description}
+                  </li>
                   <li>
-                    <i className="icon-thermometer-quarter"></i>41 &deg; C</li>
+                    <i className="icon-thermometer-quarter"></i>{Math.round(main.temp)}&deg;C</li>
                   <li>
                     <i className="icon-wind"></i>
-                    <span>wind from <strong>SouthEast</strong>
+                    <span>wind from <strong>{weatherService.convertDegreeToCompassText(wind.deg)}</strong>
                     </span>
                   </li>
                 </ul>
@@ -38,32 +40,25 @@ const WeatherContents = (props) => (
               <div className="status sun-stat col-md-6 col-sm-6 col-xs-12">
                 <ul>
                   <li>
-                    <i className="icon-sun2"></i>6:19:01 PM</li>
+                    <i className="icon-sun2"></i>{weatherService.getCurrentTimeString(sys.sunrise)}</li>
                   <li>
-                    <i className="icon-cloudy2"></i>6:19:39 PM</li>
+                    <i className="icon-cloudy2"></i>{weatherService.getCurrentTimeString(sys.sunset)}</li>
                   <li>
-                    <i className="icon-crescent"></i>80&#37; Humidity</li>
+                    <i className="icon-crescent"></i>{main.humidity}&#37; Humidity</li>
                 </ul>
               </div>
             </div>
             <div className="forecast-detail">
-              <div className="col-md-6 col-md-offset-3 col-sm-6 col-xs-12">
+              <div className="col-md-12 col-sm-8 col-xs-12">
                 <ul>
                   <li>
                     <span>Pressure</span>
-                    <strong> 1017</strong> in</li>
+                    <strong> {main.pressure}</strong> in
+                  </li>
                   <li>
                     <span>Cloudiness</span>
-                    <strong> 20</strong>&#37;</li>
-                  <li>
-                    <span>Humidity</span>
-                    <strong> 80</strong>&#37;</li>
-                  <li>
-                    <span>Rainfall</span>
-                    <strong> 0</strong> mm</li>
-                  <li>
-                    <span>Snow Depth</span>
-                    <strong> 0</strong> mm</li>
+                    <strong> {clouds.all}</strong>&#37;
+                  </li>
                 </ul>
               </div>
             </div>

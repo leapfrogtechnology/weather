@@ -32,7 +32,7 @@ const WeatherContents = ({ weather, wind, clouds, main, sys, datetime }) => (
                     <i className="icon-thermometer-quarter"></i>{Math.round(main.temp)}&deg;C</li>
                   <li>
                     <i className="icon-wind"></i>
-                    <span>wind from <strong>{weatherService.convertDegreeToCompassText(wind.deg)}</strong>
+                    <span>wind from <strong>{weatherService.convertDegreeToCompassText(wind.deg) || 'North'}</strong>
                     </span>
                   </li>
                 </ul>

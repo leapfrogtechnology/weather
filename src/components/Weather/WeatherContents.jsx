@@ -10,7 +10,7 @@ const WeatherContents = ({ weather, wind, clouds, main, sys, datetime }) => (
           <div className="row">
             <div className="col-md-12 col-sm-12 col-xs-12">
               <div className="update">
-                <span>Today's <strong className="warmer">Weather</strong> Forcast of Kathmandu</span>
+                <span>Today's <strong className="warmer">Weather</strong> Forecast of Kathmandu</span>
                 <ul>
                   {/* <li>High <strong>51.58&deg; C</strong>
                   </li>

@@ -3,7 +3,7 @@
     Creation date: 27/01/2018 07:01
     */
 
-    @font-face {
+@font-face {
   font-family: "Flaticon";
   src: url("./Flaticon.eot");
   src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
@@ -21,8 +21,8 @@
   }
 }
 
-    .fi:before{
-        display: inline-block;
+.fi:before {
+  display: inline-block;
   font-family: "Flaticon";
   font-style: normal;
   font-weight: normal;
@@ -34,9 +34,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-    }
+}
 
-    .flaticon-up-arrow:before { content: "\f100"; }
+.flaticon-up-arrow:before { content: "\f100"; }
 .flaticon-cloud:before { content: "\f101"; }
 .flaticon-clouds:before { content: "\f102"; }
 .flaticon-mist:before { content: "\f103"; }
@@ -49,15 +49,15 @@
 .flaticon-sunset:before { content: "\f10a"; }
 .flaticon-sunrise:before { content: "\f10b"; }
     
-    $font-Flaticon-up-arrow: "\f100";
-    $font-Flaticon-cloud: "\f101";
-    $font-Flaticon-clouds: "\f102";
-    $font-Flaticon-mist: "\f103";
-    $font-Flaticon-snowflake: "\f104";
-    $font-Flaticon-stormy-cloud-with-rain-and-thunder: "\f105";
-    $font-Flaticon-rain: "\f106";
-    $font-Flaticon-moon: "\f107";
-    $font-Flaticon-sun: "\f108";
-    $font-Flaticon-humidity: "\f109";
-    $font-Flaticon-sunset: "\f10a";
-    $font-Flaticon-sunrise: "\f10b";
+$font-Flaticon-up-arrow: "\f100";
+$font-Flaticon-cloud: "\f101";
+$font-Flaticon-clouds: "\f102";
+$font-Flaticon-mist: "\f103";
+$font-Flaticon-snowflake: "\f104";
+$font-Flaticon-stormy-cloud-with-rain-and-thunder: "\f105";
+$font-Flaticon-rain: "\f106";
+$font-Flaticon-moon: "\f107";
+$font-Flaticon-sun: "\f108";
+$font-Flaticon-humidity: "\f109";
+$font-Flaticon-sunset: "\f10a";
+$font-Flaticon-sunrise: "\f10b";

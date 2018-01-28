@@ -84,11 +84,13 @@ export function getUpdatedTime(timestamp) {
  * @param {string} timestamp 
  */
 export function getCurrentTimeString(timestamp) {
-  if(timestamp == 'now'){
+  if (timestamp === 'now') {
     const datetime = new Date();
-    return datetime.toLocaleTimeString('en-us', {hour:'2-digit',hour12:false});
-  } else {
-    const datetime = new Date(timestamp * 1000);    
-    return datetime.toLocaleTimeString('en-us', {hour:'2-digit',minute:'2-digit'});    
+
+    return datetime.toLocaleTimeString('en-us', { hour: '2-digit', hour12: false });
   }
+
+  const datetime = new Date(timestamp * 1000);
+
+  return datetime.toLocaleTimeString('en-us', { hour: '2-digit', minute: '2-digit' });
 }

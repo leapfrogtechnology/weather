@@ -36,26 +36,27 @@ export function convertDegreeToCompassText(degree) {
   const degreePerDirection = Math.ceil((degree / 22.5) + 0.5);
 
   const directions = [
-    'North',
-    'North NorthEast',
-    'NorthEast',
-    'East NorthEast',
-    'East',
-    'East SouthEast',
-    'SouthEast',
-    'South SouthEast',
-    'South',
-    'South SouthWest',
-    'SouthWest',
-    'West SouthWest',
-    'West',
-    'West NorthWest',
-    'NorthWest',
-    'North NorthWest'
+    'N',
+    'NNE',
+    'NE',
+    'ENE',
+    'E',
+    'ESE',
+    'SE',
+    'SSE',
+    'S',
+    'SSW',
+    'SW',
+    'WSW',
+    'W',
+    'WNW',
+    'NE',
+    'NNW'
   ];
 
   return directions[degreePerDirection % 16];
 };
+
 
 /**
  * Get the updated time from given timestamp.
@@ -72,9 +73,9 @@ export function getUpdatedTime(timestamp) {
   const min = difference % 60;
 
   return hour !== 0 ?
-    `${hour}${hour > 1 ? 'hrs' : 'hr'} ${min}${min > 1 ? 'mins' : 'min'}`
+    `${hour}${hour > 1 ? ' hrs' : ' hour'} ${min}${min > 1 ? ' mins' : ' min'}`
     :
-    `${min}${min > 1 ? 'mins' : 'min'}`;
+    `${min}${min > 1 ? ' minutes' : ' minute'}`;
 }
 
 /**
@@ -83,7 +84,13 @@ export function getUpdatedTime(timestamp) {
  * @param {string} timestamp 
  */
 export function getCurrentTimeString(timestamp) {
+  if (timestamp === 'now') {
+    const datetime = new Date();
+
+    return datetime.toLocaleTimeString('en-us', { hour: '2-digit', hour12: false });
+  }
+
   const datetime = new Date(timestamp * 1000);
 
-  return datetime.toLocaleTimeString();
+  return datetime.toLocaleTimeString('en-us', { hour: '2-digit', minute: '2-digit' });
 }

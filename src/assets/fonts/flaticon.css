@@ -1,0 +1,55 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 27/01/2018 07:01
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="fa-"]:before, [class*=" fa-"]:before,
+[class^="fa-"]:after, [class*=" fa-"]:after {   
+  font-family: Flaticon;
+  font-size: inherit;
+  font-style: normal;
+}
+
+.fa-wind:before { content: "\f100"; }
+.fa-humidity:before { content: "\f109"; }
+
+.fa-sunset:before { content: "\f10a"; }
+.fa-sunrise:before { content: "\f10b"; }
+
+
+
+.fa-02d:before, .fa-02n:before { content: "\f101"; } /*few clouds*/
+
+.fa-03d:before, .fa-03n:before,
+.fa-04d:before, .fa-04n:before { content: "\f102"; } /*clouds*/
+
+.fa-50d:before, .fa-50n:before { content: "\f103"; } /*misty*/
+.fa-13d:before, .fa-13n:before { content: "\f104"; } /*snowy*/
+
+.fa-11d:before, .fa-10d:before, .fa-11n:before { content: "\f105"; } /*thunderstorm*/
+.fa-09d:before, .fa-10n:before, .fa-09n:before { content: "\f106"; } /*showers and rain*/
+
+.fa-01n:before { content: "\f107"; } /*clear night*/
+.fa-01d:before { content: "\f108"; } /*clear day*/
+
+.fa-01d {
+  color:#FFC82C;
+}

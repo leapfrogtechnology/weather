@@ -15,13 +15,13 @@ class Weather extends Component {
 
   async componentDidMount() {
     const weatherDetails = await weatherService.getCurrentWeatherInfoByCity();
-
     this.setState({ weatherDetails, loading: false });
   }
 
   render() {
     return !this.state.loading &&
       <WeatherContents
+        city={this.state.weatherDetails.name}
         sys={this.state.weatherDetails.sys}
         main={this.state.weatherDetails.main}
         wind={this.state.weatherDetails.wind}

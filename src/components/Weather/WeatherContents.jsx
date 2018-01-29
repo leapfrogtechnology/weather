@@ -29,7 +29,7 @@ const WeatherContents = ({ weather, wind, clouds, main, sys, datetime, city }) =
           <h4>{weatherService.getCurrentTimeString(sys.sunset)}</h4>
         </div>
         <div className="col-1 text-right">
-          <div className="windarrow" style={{ transform: 'rotate('+wind.deg+'deg)'}}><i className="fa-wind h2"></i></div>
+          <div className="windarrow" style={{ transform: `rotate(${wind.deg}deg)` }}><i className="fa-wind h2"></i></div>
         </div>
         <div className="col">
           <p className="m-0 text-dim">Wind</p>

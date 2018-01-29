@@ -12,18 +12,24 @@
 
 .top-left {
 	top: 15%;
-	left: 2%;
+	left: 0;
+	transform-origin: top left;
+	transform: scale(1.4);
 }
 
 .bottom-right {
-	bottom: 5%;
-	right: 0;
+	bottom: 12%;
+	right: 2%;
 }
 
 .text-dim {
 	opacity: 0.5;
 }
 
+
+.windarrow {
+	transform-origin: center;
+}
 
 
 

@@ -3,6 +3,7 @@ import * as weatherService from '../../services/weather';
 
 
 const WeatherContents = ({ weather, wind, clouds, main, sys, datetime, city }) => (
+
   <div className={`main-wrapper bg-${weather.icon} bg-${weatherService.getCurrentTimeString('now')}`}>
     <section className="top-left col-lg-6 col-md-8">
       <div className="row">
@@ -27,7 +28,7 @@ const WeatherContents = ({ weather, wind, clouds, main, sys, datetime, city }) =
           <p className="m-0 text-dim">Sunset</p>
           <h4>{weatherService.getCurrentTimeString(sys.sunset)}</h4>
         </div>
-        <div className="col-1 text-right" style={{ transform: 'rotate({wind.deg}deg)' }}><i className="fa-wind h2"></i></div>
+        <div className="col-1 text-right" style={{ transform: 'rotate('+wind.deg+'deg)'}}><i className="fa-wind h2"></i></div>
         <div className="col">
           <p className="m-0 text-dim">Wind</p>
           <h4>{wind.speed}kmph</h4>

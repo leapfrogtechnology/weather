@@ -29,8 +29,7 @@ class Weather extends Component {
         clouds={this.state.weatherDetails.clouds}
         weather={this.state.weatherDetails.weather[0]}
       />
-
-  }
+}
 }
 
 export default Weather;

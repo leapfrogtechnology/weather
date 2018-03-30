@@ -89,26 +89,28 @@
 .bg-13d {
 	background-image: url("../images/snow.svg"), linear-gradient(180deg, #BEC5CB 0%, #DFE2E7 100%) !important;
 	color:#5F656B !important;
-	background-size: 50%;
+	background-size: 100%;
 }
 
 /*snowy night*/
 .bg-13n {
 	background-image: url("../images/snow.svg"), linear-gradient(180deg, #2E494F 0%, #435B59 100%) !important;
 	color:#FFF !important;
-	background-size: 50%;
+	background-size: 100%;
 }
 
 /*rainy, thunder*/
 .bg-09d, .bg-11d {
 	background-image: url("../images/rain.svg"), linear-gradient(180deg, #BEC5CB 0%, #DFE2E7 100%) !important;
 	color:#5F656B !important;
-	background-size: 30%;
+    background-repeat:no-repeat;
+    background-size: 100% !important;
 }
 
 .bg-09n, .bg-11n {
 	background-image: url("../images/rain.svg"), linear-gradient(180deg, #2A4466 0%, #567692 100%) !important;
 	color:#FFF !important;
-	background-size: 30%;
+    background-repeat:no-repeat;
+    background-size: 100% !important;
 }
 

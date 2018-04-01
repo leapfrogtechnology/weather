@@ -8,7 +8,7 @@ import http from '../utils/http';
  * 
  * @param {string} city 
  */
-export async function getWeatherForecastInfoByCity(city = config.defaultCity) {
+export async function getForecastByCity(city = config.defaultCity) {
   const query = qs.stringify({ q: city, appId: config.weatherAppApiId, units: 'metric', cnt: 16 });
   const data = await http.get(`${config.weatherAppUrl}/forecast?${query}`);
 
@@ -20,8 +20,21 @@ export async function getWeatherForecastInfoByCity(city = config.defaultCity) {
  * 
  * @param {string} city 
  */
-export async function getCurrentWeatherInfoByCity(city = config.defaultCity) {
+export async function getCurrentWeatherByCity(city = config.defaultCity) {
   const query = qs.stringify({ q: city, appId: config.weatherAppApiId, units: 'metric', cnt: 1 });
+  const data = await http.get(`${config.weatherAppUrl}/weather?${query}`);
+
+  return data.data;
+}
+
+/**
+ * Get current weather information for given latitude and longitude
+ * 
+ * @param {number} lat 
+ * @param {number} lon 
+ */
+export async function getCurrentWeatherByLatLon(lat, lon) {
+  const query = qs.stringify({ lat, lon, appId: config.weatherAppApiId, units: 'metric', cnt: 1 });
   const data = await http.get(`${config.weatherAppUrl}/weather?${query}`);
 
   return data.data;

@@ -5,6 +5,11 @@ import * as weatherService from '../../services/weather';
 const WeatherContents = ({ weather, wind, clouds, main, sys, datetime, city }) => (
 
   <div className={`main-wrapper bg-${weather.icon} bg-${weatherService.getCurrentTimeString('now')}`}>
+  <div className="img-wrapper">
+    <section className="top-right">
+      <div className="logo"><img src={require('../../assets/images/lft_logo.svg')} alt={"Leapfrog Logo"} /></div>
+    </section>
+
     <section className="top-left col-lg-6 col-md-8">
       <div className="row">
         <div className="col-3 text-right"><i className={`display-1 fa-${weather.icon}`}></i></div>
@@ -42,6 +47,7 @@ const WeatherContents = ({ weather, wind, clouds, main, sys, datetime, city }) =
         </div>
       </div>
     </section>
+    </div>
   </div>
 );
 
